@@ -20,7 +20,7 @@ const HomePage = () => {
 
 const styles = StyleSheet.create({
     mainContainer: {
-        backgroundColor: '#353F54',
+        backgroundColor: '#242C3B',
         height: '100%',
         width: '100%',
     },

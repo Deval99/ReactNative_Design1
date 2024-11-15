@@ -2,7 +2,7 @@ import * as React from "react"
 import Svg, { G, Path, Defs, LinearGradient, Stop, Filter, FeGaussianBlur } from "react-native-svg"
 /* SVGR has dropped some elements not supported by react-native-svg: filter */
 
-function SvgComponent(props) {
+function Card(props) {
   return (
     <Svg
       width={350}
@@ -58,4 +58,4 @@ function SvgComponent(props) {
   )
 }
 
-export default SvgComponent
+export default Card
