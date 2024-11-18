@@ -1,4 +1,4 @@
-import { View, StyleSheet, Text } from 'react-native';
+import { View, StyleSheet, Text, ScrollView } from 'react-native';
 import React from 'react';
 import CardComponent from '../../Vectors/Dashboard/Card';
 import Bike1 from '../../Vectors/Dashboard/Bike1';
@@ -14,6 +14,7 @@ const Content = () => {
     });
     return (
         <>
+        <ScrollView style={{marginBottom: -5}}>
             <View style={mainCardStyle.main}>
                 <CardComponent style={mainCardStyle.card}/>
                 <View style={mainCardStyle.cardContent}>
@@ -23,6 +24,7 @@ const Content = () => {
             </View>
             <Boxes/>
             <BikeList />
+        </ScrollView>
         </>
     );
 };
