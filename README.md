@@ -3,4 +3,4 @@ ReactNative Design Implementation from [**this**](https://www.figma.com/communit
 Screenshots:
 
 Dashboard
-![alt text](https://github.com/Deval99/ReactNative_Design1/blob/design/Screenshots/dashboard.png.jpg?raw=true)
+![Dashboard](https://github.com/Deval99/ReactNative_Design1/blob/bc158c883981efac39cf659d49d23f846f34fbe8/Screenshots/dashboard.png)
