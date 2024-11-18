@@ -4,7 +4,13 @@ import Heart_Sel from '../../Vectors/Dashboard/Heart_Sel';
 import Bike2 from '../../Vectors/Dashboard/Bike2';
 import ScrollElementSVG from '../../Vectors/Dashboard/ScrollElementSVG';
 
-const ScrollElement = () => {
+export interface BikeDetails {
+  name: string,
+  type: string,
+  price: string
+}
+
+const ScrollElement: React.FC<{bikeDetails: BikeDetails}> = (data: {bikeDetails: BikeDetails}) => {
   return (
     <>
       <ScrollElementSVG style={styles.scrollElement} />
@@ -12,9 +18,9 @@ const ScrollElement = () => {
         <Heart_Sel style={styles.heart} />
         <Bike2 style={styles.bike2} />
         <View style={styles.textSection}>
-          <Text style={styles.text1}>Road Bike</Text>
-          <Text style={styles.text2}>PEUGEOT - LR01 </Text>
-          <Text style={styles.text3}>$ 1,999.99</Text>
+          <Text style={styles.text1}>{data.bikeDetails.type}</Text>
+          <Text style={styles.text2}>{data.bikeDetails.name}</Text>
+          <Text style={styles.text3}>$ {data.bikeDetails.price}</Text>
         </View>
       </View>
     </>

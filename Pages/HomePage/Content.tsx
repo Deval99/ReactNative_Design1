@@ -14,7 +14,7 @@ const Content = () => {
     });
     return (
         <>
-        <ScrollView style={{marginBottom: -5}}>
+        <ScrollView style={mainCardStyle.scrollView}>
             <View style={mainCardStyle.main}>
                 <CardComponent style={mainCardStyle.card}/>
                 <View style={mainCardStyle.cardContent}>
@@ -24,12 +24,20 @@ const Content = () => {
             </View>
             <Boxes/>
             <BikeList />
+            <View style={mainCardStyle.spacer}/>
         </ScrollView>
         </>
     );
 };
 
 const mainCardStyle = StyleSheet.create({
+    spacer: {
+        height: 35,
+        width: 2,
+    },
+    scrollView: {
+        marginBottom: -5,
+    },
     main: {
         height: 210,
         marginTop: 20,
