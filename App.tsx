@@ -2,19 +2,15 @@
 import React from 'react';
 
 import {
-  View,
-  SafeAreaView,
-  Text,
   StyleSheet,
-  ScrollView
 } from 'react-native';
-import HomePage from './Pages/HomePage/HomePage';
+import MainPage from './MainPage';
 
 function App() {
   return (
     <>
       {/* <SafeAreaView> */}
-        <HomePage />
+        <MainPage />
       {/* </SafeAreaView> */}
     </>
   );
