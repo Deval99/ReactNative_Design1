@@ -1,10 +1,4 @@
-import {
-  View,
-  SafeAreaView,
-  StyleSheet,
-  Image,
-  TouchableOpacity,
-} from 'react-native';
+import {View, SafeAreaView, StyleSheet, TouchableOpacity} from 'react-native';
 import React, {useState} from 'react';
 import LinearGradient from 'react-native-linear-gradient';
 import Nav_Bicycle from './Vectors/Dashboard/Nav_Bicycle';
@@ -16,6 +10,7 @@ import Nav_Selected_Box from './Vectors/Dashboard/Nav_Selected_Box';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import HomePage from './Pages/HomePage/HomePage';
+import ProductDetail from './Pages/ProductDetail/ProductDetail';
 
 const Stack = createNativeStackNavigator();
 
@@ -27,29 +22,29 @@ const MainPage = () => {
       <SafeAreaView style={styles.safeAreaView}>
         {/* Header */}
         <NavigationContainer>
-          <Stack.Navigator>
+          <Stack.Navigator initialRouteName="HomePage">
             <Stack.Screen
-              name="1"
+              name="HomePage"
               component={HomePage}
+              options={{headerShown: false}}
+            />
+            <Stack.Screen
+              name="ProductDetail"
+              component={ProductDetail}
               options={{headerShown: false}}
             />
           </Stack.Navigator>
         </NavigationContainer>
-        <View style={styles.background}>
-          <Image
-            source={require('./assets/images/bg_rect.png')}
-            style={styles.bgImage}
-          />
-        </View>
       </SafeAreaView>
       <View style={styles.navigationArea}>
         <View style={styles.navContent}>
           <TouchableOpacity
+            style={styles.touchableOpacity}
             onPress={() => {
               setSelectedTabState(1);
             }}>
             {selectedTabState === 1 ? (
-              <Nav_Selected_Box style={[styles.selectedBox, {left: -15}]} />
+              <Nav_Selected_Box style={[styles.selectedBox]} />
             ) : (
               <></>
             )}
@@ -61,6 +56,7 @@ const MainPage = () => {
             />
           </TouchableOpacity>
           <TouchableOpacity
+            style={styles.touchableOpacity}
             onPress={() => {
               setSelectedTabState(2);
             }}>
@@ -77,11 +73,12 @@ const MainPage = () => {
             />
           </TouchableOpacity>
           <TouchableOpacity
+            style={styles.touchableOpacity}
             onPress={() => {
               setSelectedTabState(3);
             }}>
             {selectedTabState === 3 ? (
-              <Nav_Selected_Box style={[styles.selectedBox, {left: -17}]} />
+              <Nav_Selected_Box style={styles.selectedBox} />
             ) : (
               <></>
             )}
@@ -93,11 +90,12 @@ const MainPage = () => {
             />
           </TouchableOpacity>
           <TouchableOpacity
+            style={styles.touchableOpacity}
             onPress={() => {
               setSelectedTabState(4);
             }}>
             {selectedTabState === 4 ? (
-              <Nav_Selected_Box style={[styles.selectedBox, {left: -22}]} />
+              <Nav_Selected_Box style={styles.selectedBox} />
             ) : (
               <></>
             )}
@@ -109,11 +107,12 @@ const MainPage = () => {
             />
           </TouchableOpacity>
           <TouchableOpacity
+            style={styles.touchableOpacity}
             onPress={() => {
               setSelectedTabState(5);
             }}>
             {selectedTabState === 5 ? (
-              <Nav_Selected_Box style={[styles.selectedBox, {left: -23}]} />
+              <Nav_Selected_Box style={styles.selectedBox} />
             ) : (
               <></>
             )}
@@ -137,6 +136,12 @@ const MainPage = () => {
 };
 
 const styles = StyleSheet.create({
+  touchableOpacity: {
+    height: '100%',
+    width: 70,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
   mainContainer: {
     backgroundColor: '#242C3B',
     height: '100%',
@@ -161,6 +166,7 @@ const styles = StyleSheet.create({
   navigationArea: {
     backgroundColor: '#ffffff00',
     height: 80,
+    marginTop: -10,
     width: '100%',
   },
   linearGradient: {
@@ -171,10 +177,10 @@ const styles = StyleSheet.create({
   },
   navContent: {
     position: 'absolute',
-    top: 25,
-    left: 30,
-    right: 30,
+    left: 20,
+    right: 20,
     zIndex: 1,
+    height: 50,
     flexDirection: 'row',
     justifyContent: 'space-between',
   },
@@ -182,12 +188,11 @@ const styles = StyleSheet.create({
     color: '#FFFFFFAA',
   },
   selected: {
-    top: -10,
+    top: -15,
   },
   selectedBox: {
     position: 'absolute',
-    top: -28,
-    left: -20,
+    top: -15,
   },
 });
 

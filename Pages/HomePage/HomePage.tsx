@@ -4,11 +4,11 @@ import Content from './Content';
 import { StyleSheet, View } from 'react-native';
 
 
-const HomePage = () => {
+const HomePage = ({navigation}) => {
     return (
         <View style={styles.mainView}>
             <Header />
-            <Content/>
+            <Content navigation={navigation}/>
         </View>
     );
 };

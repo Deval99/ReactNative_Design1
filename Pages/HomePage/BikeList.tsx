@@ -38,7 +38,6 @@ const BikeList = () => {
         .filter((element, index) => index % 2 !== 0)
         .map((element, index) => (
           <>
-            <Text>{index}</Text>
             <View style={styles.main}>
               <View style={styles.row}>
                 <View style={[styles.element, styles.left]}>

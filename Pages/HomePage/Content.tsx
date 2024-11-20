@@ -1,4 +1,11 @@
-import {View, StyleSheet, Text, ScrollView} from 'react-native';
+import {
+  View,
+  StyleSheet,
+  Text,
+  ScrollView,
+  Image,
+  TouchableOpacity,
+} from 'react-native';
 import React from 'react';
 import CardComponent from '../../Vectors/Dashboard/Card';
 import Bike1 from '../../Vectors/Dashboard/Bike1';
@@ -6,16 +13,27 @@ import {useFonts} from 'expo-font';
 import Boxes from './Boxes';
 import BikeList from './BikeList';
 
-const Content = () => {
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+const Content = ({navigation}) => {
   const [loaded, error] = useFonts({
     'Poppins-Bold': require('../../assets/fonts/Poppins/Poppins-Bold.ttf'),
     'Poppins-Medium': require('../../assets/fonts/Poppins/Poppins-Medium.ttf'),
   });
   return (
-    <>
+    <View>
       <ScrollView style={mainCardStyle.scrollView}>
         <View style={mainCardStyle.main}>
+          <TouchableOpacity
+            style={{
+              position: 'absolute',
+              zIndex: 1,
+              height: 215,
+              width: '85%',
+              alignSelf: 'center',
+            }}
+            onPress={() => {
+              navigation.navigate('ProductDetail', {name: 'ProductDetail'});
+            }}>
+          </TouchableOpacity>
           <CardComponent style={mainCardStyle.card} />
           <View style={mainCardStyle.cardContent}>
             <Bike1 />
@@ -26,16 +44,23 @@ const Content = () => {
         <BikeList />
         <View style={mainCardStyle.spacer} />
       </ScrollView>
-    </>
+      <View style={mainCardStyle.background}>
+        <Image
+          source={require('../../assets/images/bg_rect.png')}
+          style={mainCardStyle.bgImage}
+        />
+      </View>
+    </View>
   );
 };
 
 const mainCardStyle = StyleSheet.create({
   spacer: {
-    height: 35,
+    height: 120,
     width: 2,
   },
   scrollView: {
+    zIndex: 1,
     marginBottom: -5,
   },
   main: {
@@ -57,8 +82,6 @@ const mainCardStyle = StyleSheet.create({
     height: 170,
   },
   linearGradient: {
-    // height: 43,
-    // width: 43,
     marginLeft: 15,
     marginRight: 15,
     borderRadius: 5,
@@ -67,6 +90,17 @@ const mainCardStyle = StyleSheet.create({
     color: '#ffffff99',
     fontFamily: 'Poppins-Bold',
     fontSize: 28,
+  },
+  background: {
+    position: 'absolute',
+    bottom: -30,
+    right: 0,
+    justifyContent: 'flex-end',
+    alignItems: 'flex-end',
+    padding: 10,
+  },
+  bgImage: {
+    position: 'absolute',
   },
 });
 
