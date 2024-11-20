@@ -5,7 +5,7 @@ import {
   Image,
   TouchableOpacity,
 } from 'react-native';
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 import LinearGradient from 'react-native-linear-gradient';
 import Nav_Bicycle from './Vectors/Dashboard/Nav_Bicycle';
 import Nav_Map from './Vectors/Dashboard/Nav_Map';
@@ -29,10 +29,10 @@ const MainPage = () => {
         <NavigationContainer>
           <Stack.Navigator>
             <Stack.Screen
-                name="1"
-                component={HomePage}
-                options={{headerShown: false}}
-             />
+              name="1"
+              component={HomePage}
+              options={{headerShown: false}}
+            />
           </Stack.Navigator>
         </NavigationContainer>
         <View style={styles.background}>
