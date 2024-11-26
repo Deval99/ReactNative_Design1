@@ -66,7 +66,12 @@ const headerStyle = StyleSheet.create({
     width: 43,
     marginLeft: 15,
     marginRight: 15,
-    borderRadius: 5,
+    borderRadius: 10,
+
+    shadowRadius: 20,
+    shadowColor: '#00000099',
+    shadowOffset: {height: 20, width: 0},
+    shadowOpacity: 1,
   },
 });
 
