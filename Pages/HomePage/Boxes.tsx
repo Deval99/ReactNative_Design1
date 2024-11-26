@@ -57,7 +57,6 @@ const boxesStyle = StyleSheet.create({
     text: {
         color: '#fff',
         fontFamily: 'Poppins-Medium',
-        zIndex: 9999999,
         alignSelf: 'center',
     },
     one: {

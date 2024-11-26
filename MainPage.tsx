@@ -168,6 +168,7 @@ const styles = StyleSheet.create({
     height: 80,
     marginTop: -10,
     width: '100%',
+    zIndex: 0
   },
   linearGradient: {
     height: '110%',
