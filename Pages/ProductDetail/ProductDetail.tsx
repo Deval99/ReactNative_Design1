@@ -1,14 +1,14 @@
-import {View, Text, StyleSheet} from 'react-native';
+import {View, Text, StyleSheet, SafeAreaView} from 'react-native';
 import React from 'react';
 import Header from './Header';
 import Content from './Content';
 
 const ProductDetail = ({navigation}) => {
   return (
-    <View style={styles.mainView}>
-      <Header text={'PEUGEOT - LR01'} navigation={navigation} />
-      <Content />
-    </View>
+    <SafeAreaView style={styles.mainView}>
+        <Header text={'PEUGEOT - LR01'} navigation={navigation} />
+        <Content />
+    </SafeAreaView>
   );
 };
 
@@ -17,6 +17,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#242C3B',
     height: '100%',
     width: '100%',
+    flex: 1,
   },
 });
 
