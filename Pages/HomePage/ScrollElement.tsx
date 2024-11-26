@@ -1,4 +1,4 @@
-import {View, Text, StyleSheet} from 'react-native';
+import {View, Text, StyleSheet, Image} from 'react-native';
 import React from 'react';
 import Heart_Sel from '../../Vectors/Dashboard/Heart_Sel';
 import Bike2 from '../../Vectors/Dashboard/Bike2';
@@ -7,7 +7,8 @@ import ScrollElementSVG from '../../Vectors/Dashboard/ScrollElementSVG';
 export interface BikeDetails {
   name: string,
   type: string,
-  price: string
+  price: string,
+  imageName: any,
 }
 
 const ScrollElement: React.FC<{bikeDetails: BikeDetails}> = (data: {bikeDetails: BikeDetails}) => {
@@ -16,7 +17,7 @@ const ScrollElement: React.FC<{bikeDetails: BikeDetails}> = (data: {bikeDetails:
       <ScrollElementSVG style={styles.scrollElement} />
       <View style={styles.elementContent}>
         <Heart_Sel style={styles.heart} />
-        <Bike2 style={styles.bike2} />
+        <Image source={data.bikeDetails.imageName} style={styles.bike2} />
         <View style={styles.textSection}>
           <Text style={styles.text1}>{data.bikeDetails.type}</Text>
           <Text style={styles.text2}>{data.bikeDetails.name}</Text>
@@ -55,6 +56,8 @@ const styles = StyleSheet.create({
   bike2: {
     alignSelf: 'center',
     top: 17,
+    height: 85,
+    width: 130
   },
   textSection: {
     marginTop: 25,

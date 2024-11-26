@@ -2,6 +2,7 @@ import {View, StyleSheet, Text} from 'react-native';
 import React, {useState} from 'react';
 import {useFonts} from 'expo-font';
 import ScrollElement, {BikeDetails} from './ScrollElement';
+import { productList } from '../../DataSet/productList';
 
 const BikeList = () => {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -10,28 +11,7 @@ const BikeList = () => {
     'Poppins-Medium': require('../../assets/fonts/Poppins/Poppins-Medium.ttf'),
   });
 
-  const [obj, _setObj] = useState<BikeDetails[]>([
-    {
-      name: 'PEUGEOT - LR01 ',
-      type: 'Road Bike',
-      price: '1,999.99',
-    },
-    {
-      name: 'PEUGEOT - LR02 ',
-      type: 'Road Bike',
-      price: '1,999.99',
-    },
-    {
-      name: 'PEUGEOT - LR03 ',
-      type: 'Road Bike',
-      price: '1,999.99',
-    },
-    {
-      name: 'PEUGEOT - LR04 ',
-      type: 'Road Bike',
-      price: '1,999.99',
-    },
-  ]);
+  const [obj, _setObj] = useState<BikeDetails[]>(productList);
   return (
     <>
       {obj

@@ -8,7 +8,6 @@ import {
 } from 'react-native';
 import React from 'react';
 import CardComponent from '../../Vectors/Dashboard/Card';
-import Bike1 from '../../Vectors/Dashboard/Bike1';
 import {useFonts} from 'expo-font';
 import Boxes from './Boxes';
 import BikeList from './BikeList';
@@ -36,7 +35,7 @@ const Content = ({navigation}) => {
           </TouchableOpacity>
           <CardComponent style={mainCardStyle.card} />
           <View style={mainCardStyle.cardContent}>
-            <Bike1 />
+            <Image source={require('../../DataSet/Images/MainProduct.png')} />
             <Text style={mainCardStyle.text}>30% Off</Text>
           </View>
         </View>
