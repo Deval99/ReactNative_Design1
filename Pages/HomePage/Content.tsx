@@ -11,6 +11,7 @@ import CardComponent from '../../Vectors/Dashboard/Card';
 import {useFonts} from 'expo-font';
 import Boxes from './Boxes';
 import BikeList from './BikeList';
+import { productList } from '../../DataSet/productList';
 
 const Content = ({navigation}) => {
   const [loaded, error] = useFonts({
@@ -30,7 +31,7 @@ const Content = ({navigation}) => {
               alignSelf: 'center',
             }}
             onPress={() => {
-              navigation.navigate('ProductDetail', {name: 'ProductDetail'});
+              navigation.navigate('ProductDetail', {name: 'ProductDetail', product: productList[0]});
             }}>
           </TouchableOpacity>
           <CardComponent style={mainCardStyle.card} />

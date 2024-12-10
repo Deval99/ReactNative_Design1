@@ -1,7 +1,6 @@
 import {View, Text, StyleSheet, Image} from 'react-native';
 import React from 'react';
 import Heart_Sel from '../../Vectors/Dashboard/Heart_Sel';
-import Bike2 from '../../Vectors/Dashboard/Bike2';
 import ScrollElementSVG from '../../Vectors/Dashboard/ScrollElementSVG';
 
 export interface BikeDetails {
